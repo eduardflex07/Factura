@@ -1,20 +1,18 @@
-#summary Preguntas Frecuentes
-
-1.  *¿Puedo utilizar los componentes en aplicaciones comerciales?*
+**¿Puedo utilizar los componentes en aplicaciones comerciales?**
 
 Sí, siempre y cuando se atribuya adecuadamente según los términos de la [http://www.apache.org/licenses/LICENSE-2.0 Apache License, Version 2.0]. Para más información consulta la página de  [http://www.apache.org/foundation/licence-FAQ.html preguntas frecuentes] de la Licencia.
 
-2. *¿Cuáles características implementa?*
+**¿Cuáles características implementa?**
 
 La librería implementa el sellado de los CFDI con SHA1 y RSA, así como la verificación del sello. Por otro lado implementa el timbrado de los CFDI así como la verificación del timbre.
 
 Adicionalmente se ha agregado soporte para el  sellado de los CFD v2.0 con SHA1 y RSA, así como la verificación del sello.
 
-3. *¿Qué debo hacer para reportar un problema o sugerir una mejora?
+**¿Qué debo hacer para reportar un problema o sugerir una mejora?**
 
 Busca la respuesta en la sección de [PreguntasFrecuentes preguntas frecuentes] o en la sección de [http://code.google.com/p/factura-electronica/issues/list seguimiento]. Si no encuentras la respuesta, crea una nueva entrada utilizando la liga de _New Issue_ y haremos todo lo posible por solucionarlo.
 
-4. *¿Cómo puedo descargar el código?
+**¿Cómo puedo descargar el código?**
 
 Puedes descargarlo en http://code.google.com/p/factura-electronica/source/checkout.
 
