@@ -10,13 +10,24 @@ Adicionalmente se ha agregado soporte para el  sellado de los CFD v2.0 con SHA1 
 
 **¿Qué debo hacer para reportar un problema o sugerir una mejora?**
 
-Busca la respuesta en la sección de [PreguntasFrecuentes preguntas frecuentes] o en la sección de [http://code.google.com/p/factura-electronica/issues/list seguimiento]. Si no encuentras la respuesta, crea una nueva entrada utilizando la liga de _New Issue_ y haremos todo lo posible por solucionarlo.
+Busca la respuesta en la sección de [preguntas frecuentes](https://github.com/bigdata-mx/factura-electronica/wiki/Preguntas-frecuentes) o en la sección de 
+[seguimiento](https://github.com/bigdata-mx/factura-electronica/issues?state=open). Si no encuentras la respuesta, crea una nueva entrada utilizando la liga de `New Issue` y haremos todo lo posible por solucionarlo.
 
 **¿Cómo puedo descargar el código?**
 
-Puedes descargarlo en http://code.google.com/p/factura-electronica/source/checkout.
+Solo necesitas descargar el código si vas a modificar o mejorar la funcionalidad central de la librería, o si quieres conocer su funcionamiento. Para hacerlo puedes clonar el repositorio utilizando git:
 
-En general puedes utilizar el .jar de la versión más reciente que esté disponible en http://code.google.com/p/factura-electronica/downloads/list, para realizar las funciones principales de los CFD.
+```
+git clone git://github.com/bigdata-mx/factura-electronica.git
+```
+
+O crear tu propio `Fork` y reincorporar tus cambios utilizando un `Pull Request` [leer más](https://help.github.com/articles/fork-a-repo). 
+
+Para compilar el código fuente, sigue las instrucciones en: 
+
+https://github.com/bigdata-mx/factura-electronica/wiki/Compilar-el-codigo-fuente
+
+En general puedes utilizar el .jar de la versión más reciente que esté disponible en https://github.com/bigdata-mx/factura-electronica/downloads, para realizar las funciones principales de los CFD.
 
 **¿Cuáles son las dependencias de los componentes?**
 
@@ -44,35 +55,36 @@ Finalmente construye el proyecto con el comando Build. Esto compila el código g
 que aparecen al importar el proyecto.
 
 Para más información consulta: http://wiki.netbeans.org/MavenBestPractices
-7. * ¿Se pueden utilizar las librerías en Google App Engine?
 
-Sí, las librerías están diseñadas para funcionar sobre [http://code.google.com/appengine/ Google App Engine]. Para hacerlo es necesario utilizar el TransofrmerFactory de [http://xml.apache.org/xalan-j/ Xalan], ya que la implementación de `javax.xml.transform.TransformerFactory` no es compatible con las restricciones de la plataforma en App Engine. 
+**¿Se pueden utilizar las librerías en Google App Engine?**
+
+Sí, las librerías están diseñadas para funcionar sobre [Google App Engine](http://code.google.com/appengine/). Para hacerlo es necesario utilizar el TransofrmerFactory de [Xalan](http://xml.apache.org/xalan-j/), ya que la implementación de `javax.xml.transform.TransformerFactory` no es compatible con las restricciones de la plataforma en App Engine. 
 
 Puedes cambiar el TransformerFactory de la siguiente manera:
 
-{{{
+```
       CFDv3 cfd = new CFDv3(...);
       TransformerFactory factory = TransformerFactory.newInstance(
                         "org.apache.xalan.processor.TransformerFactoryImpl",
                          Thread.currentThread().getContextClassLoader()); 
       cfd.setTransformerFactory(factory);
-}}}
+```
 
 En esta liga hay un ejemplo de un CFD generado en GAE utilizando las librerías: http://factura-electronica.appspot.com/ejemplos/cfdv3
 
-8. *¿Cómo utilizo caracteres Unicode (caracteres acentuados y otros caracteres especiales) dentro del código de mi programa?
+**¿Cómo utilizo caracteres Unicode (caracteres acentuados y otros caracteres especiales) dentro del código de mi programa?**
 
 La forma recomendada para incluir caracteres Unicode en el código fuente es en su forma escapada, de esta forma los caracteres siempre corresponderán a su representación Unicode independientemente de como esté codificado el archivo. Por ejemplo, en lugar de utilizar: 
 
-   {{{comp.setFormaDePago("UNA SOLA EXHIBICIÓN");}}} 
+   ```comp.setFormaDePago("UNA SOLA EXHIBICIÓN");```
 
 es conveniente utilizar:
 
-   {{{comp.setFormaDePago("UNA SOLA EXHIBICI\u00D3N");}}}
+   ```comp.setFormaDePago("UNA SOLA EXHIBICI\u00D3N");```
 
 Ya que la segunda forma es independiente de la codificación de la plataforma donde se compile el programa. Esto es importante ya que la codificación del CFD se hace en UTF-8 y una codificación distinta puede resultar en errores al verificar el certificado.
 
-9.  *¿Cuál es el objetivo de escribir esta librería?*
+**¿Cuál es el objetivo de escribir esta librería?**
 
 La librería busca tener una base de código común para el desarrollo de aplicaciones de factura electrónica escritas en Java, a fin de que los desarrolladores  dirigan sus esfuerzos a generar aplicaciones con mayor valor agregado. Al mismo tiempo que las librerías se benefician de su uso generalizado y las mejoras provenientes de la comunidad.
 
