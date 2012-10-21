@@ -31,19 +31,19 @@ En general puedes utilizar el .jar de la [versión más reciente](https://github
 
 ### ¿Cuáles son las dependencias de los componentes?
 
-Actualmente los componentes dependen de las siguientes librerías: [http://code.google.com/p/guava-libraries/ guava-libraries], [http://commons.apache.org/codec/ Commons Codec] y [http://juliusdavies.ca/commons-ssl/ not-yet-commons-ssl], todas ellas disponibles bajo la Licencia Apache, Version 2.0 y las librerías de [https://jaxb.dev.java.net/ JAXB] disponibles bajo la licencia [http://www.sun.com/cddl/ CDDL]. Adicionalmente se utiliza la librería [http://www.bouncycastle.org/java.html Bouncy Castle] para depurar la aplicación.
+Actualmente los componentes dependen de las siguientes librerías: [guava-libraries](http://code.google.com/p/guava-libraries/), [Commons Codec](http://commons.apache.org/codec/) y [not-yet-commons-ssl](http://juliusdavies.ca/commons-ssl/), todas ellas disponibles bajo la Licencia Apache, Version 2.0 y las librerías de [JAXB](https://jaxb.dev.java.net/) disponibles bajo la licencia [CDDL](http://www.sun.com/cddl/). Adicionalmente se utiliza la librería [Bouncy Castle](http://www.bouncycastle.org/java.html) para depurar la aplicación.
 
 ### ¿Cómo agrego el código del SVN a NetBeans o Eclipse para compilar las librerías?
 
 #### Eclipse
 
-Para agregar el código a Eclipse es necesario instalar el plugin [http://m2eclipse.sonatype.org/installing-m2eclipse.html m2eclipse] 
+Para agregar el código a Eclipse es necesario instalar el plugin [m2eclipse](http://m2eclipse.sonatype.org/installing-m2eclipse.html) 
 e importar el proyecto utilizando el menú: `File > Import > Maven > Existing Maven Projects`.
 Finalmente sobre el proyecto de ecplise `Maven > Update Project Configuration` para generar los esquemas y actualizar la configuración del proyecto.
 
 #### NetBeans
-Para agregar el código a NetBeans es muy importante tener instalada al menos la versión 3.0.1 de [
-http://maven.apache.org/download.html Maven].  Para configurar la versión de Maven en NetBeans:
+Para agregar el código a NetBeans es muy importante tener instalada al menos la versión 3.0.1 de [Maven]
+(http://maven.apache.org/download.html). Para configurar la versión de Maven en NetBeans:
 
 * `Tools > Options > Miscellaneous  > Maven`
 * En External Maven Home, agrega el PATH a la versión 3.0.1 de Maven
