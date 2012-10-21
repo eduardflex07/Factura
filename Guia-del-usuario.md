@@ -8,11 +8,11 @@ A continuación se presentan a manera de introducción algunos ejemplos de como 
 
 Se puede crear un `CFDv32` de tres formas:
 
-A partir de un `InputStream`, que puede ser un archivo previamente  generado o el contenido de un request HTTP, etc.:
+1) A partir de un `InputStream`, que puede ser un archivo previamente  generado o el contenido de un request HTTP, etc.:
 ```java
     CFDv32 cfd = new CFDv32(new FileInputStream(file));
 ```
-A partir de un `Comprobante` nuevo: 
+2) A partir de un `Comprobante` nuevo: 
 ```java
     ObjectFactory of = new ObjectFactory();
     Comprobante comp = of.createComprobante();
@@ -21,7 +21,7 @@ A partir de un `Comprobante` nuevo:
     ...
     CFDv32 cfd = new CFDv32(comp);
 ```
-Cargar un `Comprobante` a partir de un archivo y posteriormente utilizarlo para crear un `CFDv3`: 
+3) Cargar un `Comprobante` a partir de un archivo y posteriormente utilizarlo para crear un `CFDv3`: 
 ```
     Comprobante comp = CFDv322.newComprobante(new FileInputStream(file));
     ...
@@ -32,11 +32,11 @@ Cargar un `Comprobante` a partir de un archivo y posteriormente utilizarlo para 
 
 De igual forma se puede crear un `CFDv22`:
 
-A partir de un `InputStream`, que puede ser un archivo previamente  generado o el contenido de un request HTTP, etc.:
+1) A partir de un `InputStream`, que puede ser un archivo previamente  generado o el contenido de un request HTTP, etc.:
 ```java
     CFDv22 cfd = new CFDv22(new FileInputStream(file));
 ```
-A partir de un `Comprobante`, que es el modelo que representa al XSD en la aplicación: 
+2) A partir de un `Comprobante`, que es el modelo que representa al XSD en la aplicación: 
 ```java
     ObjectFactory of = new ObjectFactory();
     Comprobante comp = of.createComprobante();
@@ -45,7 +45,7 @@ A partir de un `Comprobante`, que es el modelo que representa al XSD en la aplic
     ...
     CFDv22 cfd = new CFDv22(comp);
 ```
-Cargar un `Comprobante` a partir de un archivo y posteriormente utilizarlo para crear un `CFDv22`: 
+3) Cargar un `Comprobante` a partir de un archivo y posteriormente utilizarlo para crear un `CFDv22`: 
 ```java
     Comprobante comp = CFDv22.newComprobante(new FileInputStream(file));
     ...
