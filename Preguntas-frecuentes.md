@@ -27,7 +27,7 @@ Para compilar el código fuente, sigue las instrucciones en:
 
 https://github.com/bigdata-mx/factura-electronica/wiki/Compilar-el-codigo-fuente
 
-En general puedes utilizar el .jar de la versión más reciente que esté disponible en https://github.com/bigdata-mx/factura-electronica/downloads, para realizar las funciones principales de los CFD.
+En general puedes utilizar el .jar de la [versión más reciente](https://github.com/bigdata-mx/factura-electronica/downloads) para realizar las funciones principales de los CFD.
 
 **¿Cuáles son las dependencias de los componentes?**
 
@@ -88,12 +88,12 @@ Ya que la segunda forma es independiente de la codificación de la plataforma do
 
 La librería busca tener una base de código común para el desarrollo de aplicaciones de factura electrónica escritas en Java, a fin de que los desarrolladores  dirigan sus esfuerzos a generar aplicaciones con mayor valor agregado. Al mismo tiempo que las librerías se benefician de su uso generalizado y las mejoras provenientes de la comunidad.
 
-10. *¿Cuáles son las siguientes metas del proyecto?
+**¿Cuáles son las siguientes metas del proyecto?**
 
 Las siguientes metas son:
   * Mejorar los mensajes de error del programa de línea de comandos
-  * Agregar los esquemas de los complementos
+  * Mejorar el soporte para complementos
 
 11. *¿Cómo me entero de las actualizaciones y mejoras a las librerías?
 
-Entérate de las mejoras y actualizaciones a las librerías a través de nuestra [http://www.twitter.com/bigdata_mx cuenta de twitter]  [http://www.twitter.com/bigdata_mx http://twitter-badges.s3.amazonaws.com/t_mini-a.png]
+Entérate de las mejoras y actualizaciones a las librerías a través de nuestra [cuenta de twitter] (http://www.twitter.com/bigdata_mx) y sigue las actividades del proyecto utilizando la función `Watch` en la parte superior de la página.
