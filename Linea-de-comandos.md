@@ -2,7 +2,9 @@
 
 La librería incluye dos programas que permiten trabajar con los CFD desde la 
 linea de comandos: ```cfd``` para trabajar con la versión 2.0 y ```cfdi``` para trabajar 
-con la versión 3.0. Para ejecutar estos comandos cambia al directorio donde se 
+con la versión 3.0. 
+
+Para ejecutar estos comandos cambia al directorio donde se 
 descomprimieron los archivos y ejecuta cualquiera de los siguientes ejemplos:
 
 ### Para validar un CFD sellado contra el esquema:
