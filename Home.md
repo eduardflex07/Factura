@@ -1,1 +1,6 @@
-Welcome to the factura-electronica wiki!
+* [Guia del usuario](https://github.com/bigdata-mx/factura-electronica/wiki/Guia-del-usuario)
+* [Preguntas frecuentes](https://github.com/bigdata-mx/factura-electronica/wiki/Preguntas-frecuentes)
+* [Documentación del API](http://factura-electronica.googlecode.com/svn/javadoc/index.html)
+* [Linea de Comandos](https://github.com/bigdata-mx/factura-electronica/wiki/Linea-de-comandos)
+* [Código fuente](https://github.com/bigdata-mx/factura-electronica/wiki/Compilar-el-codigo-fuente)
+
