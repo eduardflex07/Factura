@@ -3,5 +3,4 @@
 * [Documentación del API](http://factura-electronica.googlecode.com/svn/javadoc/index.html)
 * [Linea de Comandos](https://github.com/bigdata-mx/factura-electronica/wiki/Linea-de-comandos)
 * [Código fuente](https://github.com/bigdata-mx/factura-electronica/wiki/Compilar-el-codigo-fuente)
-
 * [Cambios](https://github.com/bigdata-mx/factura-electronica/wiki/Cambios)
