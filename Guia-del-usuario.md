@@ -1,6 +1,6 @@
 La librería presenta una interfaz muy simple centrada en el Comprobante Fiscal Digital (CFD), las clases principales son `CFDv3` y `CFDv2` que tienen la lógica correspondiente a las versiones 3.0 y 2.0 del CFD respectivamente.
 
-## Breve introducción
+### Breve introducción
 
 A continuación se presentan a manera de introducción algunos ejemplos de como utilizar la librería. Más adelante se explican a detalle los pasos necesarios para descargar e instalar la librería.
 
@@ -8,12 +8,12 @@ A continuación se presentan a manera de introducción algunos ejemplos de como 
 
 Se puede crear un `CFDv3` de tres formas:
 
-  * A partir de un `InputStream`, que puede ser un archivo previamente  generado o el contenido de un request HTTP, etc.:
+A partir de un `InputStream`, que puede ser un archivo previamente  generado o el contenido de un request HTTP, etc.:
 ```java
     CFDv3 cfd = new CFDv3(new FileInputStream(file));
 ```
-  * A partir de un `Comprobante` nuevo: 
-```
+A partir de un `Comprobante` nuevo: 
+```java
     ObjectFactory of = new ObjectFactory();
     Comprobante comp = of.createComprobante();
     comp.setVersion("3.0");
@@ -21,43 +21,43 @@ Se puede crear un `CFDv3` de tres formas:
     ...
     CFDv3 cfd = new CFDv3(comp);
 ```
-  * Cargar un `Comprobante` a partir de un archivo y posteriormente utilizarlo para crear un CFDv3: 
-{{{
+Cargar un `Comprobante` a partir de un archivo y posteriormente utilizarlo para crear un CFDv3: 
+```
     Comprobante comp = CFDv3.newComprobante(new FileInputStream(file));
     ...
     CFDv3 cfd = new CFDv3(comp);
-}}}
+```
 
-=== Creación de un CFDv2 ===
+### Creación de un CFDv2
 
 De igual forma se puede crear un `CFDv2`:
 
-  * A partir de un `InputStream`, que puede ser un archivo previamente  generado o el contenido de un request HTTP, etc.:
-{{{
+A partir de un `InputStream`, que puede ser un archivo previamente  generado o el contenido de un request HTTP, etc.:
+```java
     CFDv2 cfd = new CFDv2(new FileInputStream(file));
-}}}
-  * A partir de un `Comprobante`, que es el modelo que representa al XSD en la aplicación: 
-{{{
+```
+A partir de un `Comprobante`, que es el modelo que representa al XSD en la aplicación: 
+```java
     ObjectFactory of = new ObjectFactory();
     Comprobante comp = of.createComprobante();
     comp.setVersion("2.0");
     comp.setFecha(new Date());
     ...
     CFDv2 cfd = new CFDv2(comp);
-}}}
-  * Cargar un `Comprobante` a partir de un archivo y posteriormente utilizarlo para crear un CFDv2: 
-{{{
+```
+Cargar un `Comprobante` a partir de un archivo y posteriormente utilizarlo para crear un CFDv2: 
+```java
     Comprobante comp = CFDv2.newComprobante(new FileInputStream(file));
     ...
     CFDv2 cfd = new CFDv2(comp);
-}}}
+```
 
-=== Principales operaciones === 
+### Principales operaciones
 
 Las clases CFDv3 y el CFDv2, tienen cuatro métodos principales `sellar()`, `validar()`,  `verificar()` y `guardar()`.
 
 El flujo típico para _firmar_ un CFDI versión 3.0 se ve así:
-{{{
+```java
     CFDv3 cfd = new CFDv3(new FileInputStream(file)); // Crea el CFD a partir de un archivo
     Key key = KeyLoader.loadPKCS8PrivateKey(new FileInputStream(keyfile),  password); // Carga la llave privada
     Certificate cert = KeyLoader.loadX509Certificate(new FileInputStream(certFile)); // Carga el certificado
@@ -65,32 +65,32 @@ El flujo típico para _firmar_ un CFDI versión 3.0 se ve así:
     cfd.guardar(new FileOutputStream(outFile)); // Serializa el CFD ya firmado
     String cadena = cfd.getCadenaOriginal(); // Obtener cadena original
     String sello = sellado.getSello(); // Obtener sello
-}}}
+```
 
 El flujo típico para _verificar_ un CFDI versión 3.0, se ve así:
 
-{{{
+```java
     CFDv3 cfd = new CFDv3(new FileInputStream(file)); // Crea el CFD a partir de un archivo
     cfd.validar(); // Valida el XML, que todos los elementos estén presentes
     cfd.verificar(); // Verifica un CFD ya firmado
-}}}
+```
 
 Además de estas operaciones el CFDv2 permite verificar el CFD utilizando un certificado externo:
 
-{{{
+```java
     CFDv2 cfd = new CFDv2(new FileInputStream(file)); // Crea el CFD a partir de un archivo
     Certificate cert = KeyLoader.loadX509Certificate(new FileInputStream(certFile)); // Carga el certificado
     cfd.validar(); // Valida el XML, que todos los elementos estén presentes
     cfd.verificar(cert); // Verifica un CFD ya firmado
-}}}
+```
 
-_Nota:  Puedes encontrar un ejemplo del uso de las librerías en las clases:_ [http://code.google.com/p/factura-electronica/source/browse/trunk/cfdi-base/src/main/java/mx/bigdata/sat/cfdi/examples/Main.java mx.bigdata.sat.cfdi.examples.Main] y [http://code.google.com/p/factura-electronica/source/browse/trunk/cfdi-base/src/main/java/mx/bigdata/sat/cfd/examples/Main.java mx.bigdata.sat.cfd.examples.Main].
+_Nota:  Puedes encontrar un ejemplo del uso de las librerías en las clases:_ [mx.bigdata.sat.cfdi.examples.Main](https://github.com/bigdata-mx/factura-electronica/blob/master/src/main/java/mx/bigdata/sat/cfdi/examples/Main.java) y [mx.bigdata.sat.cfd.examples.Main](https://github.com/bigdata-mx/factura-electronica/blob/master/src/main/java/mx/bigdata/sat/cfd/examples/Main.java).
  
-=== Creación de un `Comprobante` utilizando las librerías ===
+### Creación de un `Comprobante` utilizando las librerías
 
-Para crear un `Comprobante` de forma procedural es necesario utilizar los métodos de la clase [http://factura-electronica.googlecode.com/svn/javadoc/mx/bigdata/sat/cfdi/schema/ObjectFactory.html mx.bigdata.sat.cfdi.schema.ObjectFactory] para la versión 3.0 y [http://factura-electronica.googlecode.com/svn/javadoc/mx/bigdata/sat/cfd/schema/ObjectFactory.html mx.bigdata.sat.cfd.schema.ObjectFactory] para la versión 2.0.
+Para crear un `Comprobante` de forma procedural es necesario utilizar los métodos de la clase [mx.bigdata.sat.cfdi.schema.ObjectFactory](http://factura-electronica.googlecode.com/svn/javadoc/mx/bigdata/sat/cfdi/schema/ObjectFactory.html) para la versión 3.0 y [mx.bigdata.sat.cfd.schema.ObjectFactory](http://factura-electronica.googlecode.com/svn/javadoc/mx/bigdata/sat/cfd/schema/ObjectFactory.html) para la versión 2.0.
 
-{{{
+```java
     // CFDI versión 3.0
     ObjectFactory of = new ObjectFactory();
     Comprobante comp = of.createComprobante();
@@ -106,9 +106,9 @@ Para crear un `Comprobante` de forma procedural es necesario utilizar los métod
     comp.setImpuestos(createImpuestos(of));
     CFDv3 cfd = new CFDv3(comp); 
     ...
-}}}
+```
 
-{{{
+```java
     // CFD versión 2.0
     ObjectFactory of = new ObjectFactory();
     Comprobante comp = of.createComprobante();
@@ -129,9 +129,9 @@ Para crear un `Comprobante` de forma procedural es necesario utilizar los métod
     comp.setImpuestos(createImpuestos(of));
     CFDv2 cfd = new CFDv2(comp); 
     ...
-}}}
+```
 
-_Nota:  Puedes encontrar un ejemplo de este código en las clases:_ [http://code.google.com/p/factura-electronica/source/browse/trunk/cfdi-base/src/main/java/mx/bigdata/sat/cfdi/examples/ExampleCFDFactory.java mx.bigdata.sat.cfdi.examples.ExampleCFDFactory] y [http://code.google.com/p/factura-electronica/source/browse/trunk/cfdi-base/src/main/java/mx/bigdata/sat/cfd/examples/ExampleCFDFactory.java mx.bigdata.sat.cfd.examples.ExampleCFDFactory].
+_Nota:  Puedes encontrar un ejemplo de este código en las clases:_ [mx.bigdata.sat.cfdi.examples.ExampleCFDv32Factory](https://github.com/bigdata-mx/factura-electronica/blob/master/src/main/java/mx/bigdata/sat/cfdi/examples/ExampleCFDv32Factory.java)  y [mx.bigdata.sat.cfd.examples.ExampleCFDv22Factory](https://github.com/bigdata-mx/factura-electronica/blob/master/src/main/java/mx/bigdata/sat/cfd/examples/ExampleCFDv22Factory.java).
 
 = Uso de la librería =
 
