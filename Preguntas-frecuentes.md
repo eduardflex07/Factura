@@ -18,11 +18,11 @@ Puedes descargarlo en http://code.google.com/p/factura-electronica/source/checko
 
 En general puedes utilizar el .jar de la versión más reciente que esté disponible en http://code.google.com/p/factura-electronica/downloads/list, para realizar las funciones principales de los CFD.
 
-5. * ¿Cuáles son las dependencias de los componentes?*
+**¿Cuáles son las dependencias de los componentes?**
 
 Actualmente los componentes dependen de las siguientes librerías: [http://code.google.com/p/guava-libraries/ guava-libraries], [http://commons.apache.org/codec/ Commons Codec] y [http://juliusdavies.ca/commons-ssl/ not-yet-commons-ssl], todas ellas disponibles bajo la Licencia Apache, Version 2.0 y las librerías de [https://jaxb.dev.java.net/ JAXB] disponibles bajo la licencia [http://www.sun.com/cddl/ CDDL]. Adicionalmente se utiliza la librería [http://www.bouncycastle.org/java.html Bouncy Castle] para depurar la aplicación.
 
-6.  *¿Cómo agrego el código del SVN a NetBeans o Eclipse para compilar las librerías?*
+**¿Cómo agrego el código del SVN a NetBeans o Eclipse para compilar las librerías?**
 
 *_NetBeans_*
 
