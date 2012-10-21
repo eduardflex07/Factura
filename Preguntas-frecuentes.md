@@ -24,23 +24,26 @@ Actualmente los componentes dependen de las siguientes librerías: [http://code.
 
 **¿Cómo agrego el código del SVN a NetBeans o Eclipse para compilar las librerías?**
 
-*_NetBeans_*
+### Eclipse
 
-Para agregar el código a NetBeans es muy importante tener instalada al menos la versión 3.0.1 de [http://maven.apache.org/download.html Maven].  Para configurar la versión de Maven en NetBeans:
+Para agregar el código a Eclipse es necesario instalar el plugin [http://m2eclipse.sonatype.org/installing-m2eclipse.html m2eclipse] 
+e importar el proyecto utilizando el menú: `File > Import > Maven > Existing Maven Projects`.
+Finalmente sobre el proyecto de ecplise `Maven > Update Project Configuration` para generar los esquemas y actualizar la configuración del proyecto.
 
- # "Tools > Options > Miscellaneous  > Maven"
- # En External Maven Home, agrega el PATH a la versión 3.0.1 de Maven
+### NetBeans
+Para agregar el código a NetBeans es muy importante tener instalada al menos la versión 3.0.1 de [
+http://maven.apache.org/download.html Maven].  Para configurar la versión de Maven en NetBeans:
 
-A continuación importa el proyecto de la siguiente manera: “File > New Project > Maven > Maven Project with Existing POM” y  en el siguiente diálogo selecciona el directorio con el código descargado del svn.  
+* `Tools > Options > Miscellaneous  > Maven`
+* En External Maven Home, agrega el PATH a la versión 3.0.1 de Maven
 
-Finalmente construye el proyecto con el comando Build. Esto compila el código generado y corrige los errores de compilación que aparecen al importar el proyecto.
+A continuación importa el proyecto de la siguiente manera: `File > New Project > Maven > Maven Project with Existing POM` 
+y en el siguiente diálogo selecciona el directorio con el código de git.  
+
+Finalmente construye el proyecto con el comando Build. Esto compila el código generado y corrige los errores de compilación
+que aparecen al importar el proyecto.
 
 Para más información consulta: http://wiki.netbeans.org/MavenBestPractices
-
-*_Eclipse_*
-
-Para agregar el código a Eclipse es necesario instalar el plugin [http://m2eclipse.sonatype.org/installing-m2eclipse.html m2eclipse] e importar el proyecto utilizando el menú: "File > Import > Maven > Existing Maven Projects". Finalmente sobre el proyecto de ecplise "Maven > Update Project Configuration" para generar los esquemas y actualizar la configuración del proyecto.
-
 7. * ¿Se pueden utilizar las librerías en Google App Engine?
 
 Sí, las librerías están diseñadas para funcionar sobre [http://code.google.com/appengine/ Google App Engine]. Para hacerlo es necesario utilizar el TransofrmerFactory de [http://xml.apache.org/xalan-j/ Xalan], ya que la implementación de `javax.xml.transform.TransformerFactory` no es compatible con las restricciones de la plataforma en App Engine. 
