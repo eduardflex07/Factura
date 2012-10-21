@@ -1,5 +1,3 @@
-## Herramientas de línea de comandos
-
 La librería incluye dos programas que permiten trabajar con los CFD desde la 
 linea de comandos: ```cfd``` para trabajar con la versión 2.0 y ```cfdi``` para trabajar 
 con la versión 3.0. 
