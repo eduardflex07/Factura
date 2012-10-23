@@ -1,6 +1,6 @@
 Los usuarios avanzados que quieran **mejorar o extender** las librerías pueden descargar y compilar el código fuente. Para utilizar las librerías en tus propios desarrollos no es necesario descargar el código fuente (descarga los archivos ya compilados o utiliza las librerías en maven).
 
-### Pre-requisitos
+#### Pre-requisitos
 Para trabajar con el código fuente de la librería de factura electrónica debes tener instalados los siguientes sistemas:
 
 * Java >= 6
