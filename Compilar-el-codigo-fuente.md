@@ -45,8 +45,8 @@ Para compilar los componentes, utiliza el comando:
 mvn compile
 ```
 
-este comando preparará todas las dependencias y generará el código necesario 
-para trabajar con el XSD de la versión 3.0 y 2.0 del CFD y la versión 1.0 del 
+Este comando preparará todas las dependencias y generará el código necesario 
+para trabajar con el XSD de la versión 3.2 y 2.2 del CFD y la versión 1.0 del 
 TFD.
 
 #### Ejecutar el programa de ejemplo
