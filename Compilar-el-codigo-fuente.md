@@ -16,11 +16,6 @@ git clone git://github.com/bigdata-mx/factura-electronica.git
 B) Crear tu propio `Fork` a fin de reincorporar tus cambios al repositorio utilizando un `Pull Request` [leer más](https://help.github.com/articles/fork-a-repo). 
 
 
-```
-git@github.com:bigdata-mx/factura-electronica.git
-```
-
-
 #### Compilar los componentes
 Para compilar los componentes, utiliza el comando:
 
