@@ -1,22 +1,25 @@
-Los usuarios avanzados que quieran **mejorar o extender** las librerías pueden descargar y compilar el código fuente. Para utilizarlas en tus propios desarrollos no es necesario descargar el código fuente (descarga los archivos ya compilados o utiliza las librerías en maven).
-
- Para ello es necesario seguir los siguientes pasos:
+Los usuarios avanzados que quieran **mejorar o extender** las librerías pueden descargar y compilar el código fuente. Para utilizar las librerías en tus propios desarrollos no es necesario descargar el código fuente (descarga los archivos ya compilados o utiliza las librerías en maven).
 
 #### Pre-requisitos
-Para trabajar con el código fuente de la librería de factura electrónica debes
- tener instalados los siguientes sistemas:
+Para trabajar con el código fuente de la librería de factura electrónica debes tener instalados los siguientes sistemas:
 
-* Java 6
+* Java >= 6
 * Maven
 
 #### Obtener el código fuente
-Realiza un Fork del repositorio:
+Existen dos opciones A) clonar el repositorio utilizando git para explorar el código fuente.
 
+```
+git clone git://github.com/bigdata-mx/factura-electronica.git
+```
+
+B) Crear tu propio `Fork` a fin de reincorporar tus cambios al repositorio utilizando un `Pull Request` [leer más](https://help.github.com/articles/fork-a-repo). 
+
+
+```
 git@github.com:bigdata-mx/factura-electronica.git
+```
 
-
-Revisa la información en las preguntas frecuentes para agregar el código fuente
-a un IDE (Netbeans o Eclipse)
 
 #### Compilar los componentes
 Para compilar los componentes, utiliza el comando:
