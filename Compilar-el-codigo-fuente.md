@@ -41,8 +41,7 @@ Para más información consulta: http://wiki.netbeans.org/MavenBestPractices
 
 #### Compilar los componentes
 Para compilar los componentes, utiliza el comando:
-
- ```
+```
 mvn compile
 ```
 
@@ -52,14 +51,12 @@ TFD.
 
 #### Ejecutar el programa de ejemplo
 Para ejecutar el programa de ejemplo, utiliza el comando:
-
- ```
+```
 mvn exec:java
 ```
 
 #### Probar los componentes
 Para ejecutar el programa de ejemplo, utiliza el comando:
-
- ```
+```
 mvn compile test
 ```
