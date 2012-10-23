@@ -42,7 +42,9 @@ Para más información consulta: http://wiki.netbeans.org/MavenBestPractices
 #### Compilar los componentes
 Para compilar los componentes, utiliza el comando:
 
- ```mvn compile```
+ ```
+mvn compile
+```
 
 este comando preparará todas las dependencias y generará el código necesario 
 para trabajar con el XSD de la versión 3.0 y 2.0 del CFD y la versión 1.0 del 
@@ -51,9 +53,13 @@ TFD.
 #### Ejecutar el programa de ejemplo
 Para ejecutar el programa de ejemplo, utiliza el comando:
 
- ```mvn exec:java```
+ ```
+mvn exec:java
+```
 
 #### Probar los componentes
 Para ejecutar el programa de ejemplo, utiliza el comando:
 
- ```mvn compile test```
+ ```
+mvn compile test
+```
