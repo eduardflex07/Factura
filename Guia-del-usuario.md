@@ -56,24 +56,47 @@ De igual forma se puede crear un `CFDv22`:
 
 Las clases CFDv3 y el CFDv2, tienen cuatro métodos principales `sellar()`, `validar()`,  `verificar()` y `guardar()`.
 
-El flujo típico para _firmar_ un CFDI versión 3.0 se ve así:
+Para _firmar_ un CFDI versión 3.0:
 ```java
     CFDv32 cfd = new CFDv32(new FileInputStream(file)); // Crea el CFD a partir de un archivo
     Key key = KeyLoader.loadPKCS8PrivateKey(new FileInputStream(keyfile),  password); // Carga la llave privada
     Certificate cert = KeyLoader.loadX509Certificate(new FileInputStream(certFile)); // Carga el certificado
     Comprobante sellado = cfd.sellarComprobante(key, cert); // Sellar CFD y obtener un Comprobante sellado
-    cfd.guardar(new FileOutputStream(outFile)); // Serializa el CFD ya firmado
+    cfd.guardar(new FileOutputStream(outFile)); // Guardar el CFD ya firmado
+
     String cadena = cfd.getCadenaOriginal(); // Obtener cadena original
     String sello = sellado.getSello(); // Obtener sello
 ```
 
-El flujo típico para _verificar_ un CFDI versión 3.0, se ve así:
+Para agregar el timbre fiscal del PAC al CFDI versión 3.0:
+
+```java
+    // Guardar el comprobante sellado como en el ejemplo anterior.
+    // Enviar al PAC, cuando este regresa el timbre:
+    // 1) Se agrega el timbre a la lista de complementos
+    // 2) A partir de este comprobante se crea un nuevo CFDv32
+
+    TimbreFiscalDigital timbre = of.createTimbreFiscalDigital();
+    timbre.setFechaTimbrado("...");
+    timbre.setNoCertificadoSAT("...");
+
+    Complemento complemento = of.createComprobanteComplemento();
+    complemento.getAny().add(timbre);
+    comprobanteSellado.setComplemento(complemento);
+    CFDv32 cfdTimbrado = new CFDv32(comprobanteSellado);
+    cfdTimbrado .validar();
+    cfdTimbrado .verificar();
+    cfdTimbrado .guardar(new FileOutputStream("factura.xml"));
+```
+
+Para _verificar_ un CFDI versión 3.0:
 
 ```java
     CFDv32 cfd = new CFDv32(new FileInputStream(file)); // Crea el CFD a partir de un archivo
     cfd.validar(); // Valida el XML, que todos los elementos estén presentes
     cfd.verificar(); // Verifica un CFD ya firmado
 ```
+
 
 Además de estas operaciones el CFDv2 permite verificar el CFD utilizando un certificado externo:
 
